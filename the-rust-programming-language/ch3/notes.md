@@ -40,3 +40,15 @@ fn main() {
 You must be explicit and always provide if with a Boolean as its condition.
 
 You cannot use number or any other non-Boolean type as a condition.
+
+## loop
+
+Rust has three kinds of loops: `loop`, `while`, and `for`.
+
+```rust
+fn main() {
+    loop {
+        println!("again!");
+    }
+}
+```

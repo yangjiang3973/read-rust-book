@@ -34,3 +34,18 @@ fn main() {
     let origin = Point(0, 0, 0);
 }
 ```
+
+## Associated Functions
+
+```rust
+impl Rectangle {
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+let sq = Rectangle::square(3);
+```

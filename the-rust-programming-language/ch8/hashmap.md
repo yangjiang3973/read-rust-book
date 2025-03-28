@@ -47,6 +47,46 @@ for (key, value) in &scores {
 
 ## Update
 
-```rust
+Overwrite:
 
+```rust
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from("Blue"), 10);
+scores.insert(String::from("Blue"), 25);
+
+println!("{scores:?}"); // {"Blue": 25}
+```
+
+Add if key does not exist:
+
+```rust
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+scores.insert(String::from("Blue"), 10);
+
+scores.entry(String::from("Yellow")).or_insert(50);
+scores.entry(String::from("Blue")).or_insert(50);
+
+println!("{scores:?}");  // {"Blue": 10, "Yellow": 50}
+```
+
+Update based on old value:
+
+```rust
+use std::collections::HashMap;
+
+let text = "hello world wonderful world";
+
+let mut map = HashMap::new();
+
+for word in text.split_whitespace() {
+    let count = map.entry(word).or_insert(0);
+    *count += 1;
+}
+
+println!("{map:?}");
 ```

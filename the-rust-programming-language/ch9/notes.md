@@ -99,3 +99,5 @@ fn read_username_from_file() -> Result<String, io::Error> {
 ```
 
 The ? operator eliminates a lot of boilerplate and makes this function’s implementation simpler.
+
+## When to use panic!
